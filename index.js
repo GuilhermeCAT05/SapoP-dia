@@ -44,11 +44,24 @@ toggleButton.addEventListener("click", () => {
 
 window.addEventListener("resize", () => {
 
-    sidebar.classList.remove("active");
-    sidebar.classList.remove("expanded");
-    sidebar.classList.add("semi-collapsed");
+    if (isMobile()) {
 
-    content.classList.remove("expanded");
+        // Estado inicial do menu mobile
+        sidebar.classList.remove("expanded");
+        sidebar.classList.remove("semi-collapsed");
+        sidebar.classList.remove("active");
+
+        content.classList.remove("expanded");
+
+    } else {
+
+        // Estado inicial do menu desktop
+        sidebar.classList.remove("active");
+        sidebar.classList.remove("expanded");
+        sidebar.classList.add("semi-collapsed");
+
+        content.classList.remove("expanded");
+    }
 
     toggleButton.textContent = "☰";
     toggleButton.setAttribute("aria-expanded", "false");

@@ -37,9 +37,7 @@ toggleButton.addEventListener("click", () => {
 
         toggleButton.textContent = aberto ? "✕" : "☰";
         toggleButton.setAttribute("aria-expanded", aberto);
-
     }
-
 });
 
 window.addEventListener("resize", () => {

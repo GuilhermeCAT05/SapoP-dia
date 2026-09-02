@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="./geral.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SapoPédia - Lithobates palmipes</title>
+</head>
+<body>
+    <!-- Botão de alternância (Hamburger) que controlará o menu no celular -->
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Alternar barra lateral" aria-expanded="false">☰</button>
+
+    <!-- Barra lateral -->
+    <aside id="sidebar" class="sidebar semi-collapsed">
+        <nav class="sidebar-nav">
+            <h2>SapoPédia</h2>
+            <a href="index.html">Início</a>
+            <a href="ras.html">Rãs</a>
+            <a href="sapos.html">Sapos</a>
+            <a href="pererecas.html">Pererecas</a>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+        <div class="lithobates-container">
+            
+            <!-- Coluna Esquerda: Fotos, Identificação e Status -->
+            <div class="left-col">
+                <!-- Imagem Principal -->
+                <div class="image-box">
+                    <img src="./images/lithobates_palmipes.jpg" alt="Lithobates palmipes" />
+                </div>
+                
+                <!-- Nome Popular e Espécie -->
+                <div class="name-card">
+                    <p>Nome popular sugerido: <strong>Rã-de-pés-do-pato ou Rã do Rio Amazônia</strong></p>
+                    <p>Rã da espécie <em>Lithobates palmipes</em></p>
+                </div>
+                
+                <!-- Estado de Conservação -->
+                <div class="info-card">
+                    <div class="card-header">Estado de conservação</div>
+                    <div class="card-body status-body">
+                        <div class="status-body">
+                            <!-- Grid de labels alinhado com as 7 colunas das esferas -->
+                            <div class="status-labels">
+                                <div class="label-group extinto">Extinto</div>
+                                <div class="label-group ameacado">Ameaçado</div>
+                                <div class="label-group preocupante">Pouco preocupante</div>
+                            </div>
+
+                            <div class="status-line-container">
+                                <div class="status-line"></div>
+                                <div class="status-dots">
+                                <span class="dot">EX</span>
+                                <span class="dot">EW</span>
+                                <span class="dot">CR</span>
+                                <span class="dot">EN</span>
+                                <span class="dot">VU</span>
+                                <span class="dot">NT</span>
+                                <span class="dot active">LC</span>
+                                </div>
+                            </div>
+                            </div>
+                        <a href="https://www.iucnredlist.org/species/58689/85884413" target="_blank" class="source-link">(The IUCN Red List of Threatened Species, 2026)</a>
+                    </div>
+                </div>
+                
+                <!-- Mapa de Localização -->
+                <div class="info-card">
+                    <div class="card-header">Localização da espécie</div>
+                    <div class="card-body map-body">
+                        <img src="./images/MAPA-lithobates_palmipes.jpg" alt="Mapa de distribuição geográfica da Lithobates palmipes" class="map-img" />
+                        <a href="https://www.iucnredlist.org" target="_blank" class="source-link">(The IUCN Red List of Threatened Species, 2026)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Informações Detalhadas -->
+            <div class="right-col">
+                <!-- Distribuição Geográfica -->
+                <div class="info-card text-info-card">
+                    <div class="card-header">Localidade-tipo e distribuição geográfica</div>
+                    <div class="card-body">
+                        <p>A localidade-tipo da espécie é o rio Amazonas, Brasil. A espécie tem distribuição cis-andina e ocorre no Brasil, Colômbia, Equador, Peru, Bolívia, Venezuela, Guiana e Suriname (Frost 2018). Oliveira et al. (2010) promovem o único registro da espécie no estado de Goiás conhecido até o momento, para o município de Piranhas.</p>
+                        <a href="https://books.scielo.org/id/9qfsp/pdf/vaz-9786587590011-17.pdf" class="ref-link">(Vaz-Silva et al., 2020)</a>
+                    </div>
+                </div>
+                
+                <!-- Descrição Física -->
+                <div class="info-card text-info-card">
+                    <div class="card-header">Descrição</div>
+                    <div class="card-body">
+                        <p>CRC variando de 78 a 126 mm em machos (Hillis & de Sá 1988). Coloração dorsal verde-oliva a marrom com manchas escuras irregulares nos flancos e superfície dos membros. Ventre claro. Faixa dorsolateral evidente, superfície ventral e parte interna da coxa de coloração clara uniforme. Olhos proeminentes em posição lateral. Presença de membrana interdigital bem desenvolvida nos pés.</p>
+                        <a href="https://books.scielo.org/id/9qfsp/pdf/vaz-9786587590011-17.pdf" class="ref-link">(Vaz-Silva et al., 2020)</a>
+                    </div>
+                </div>
+                
+                <!-- Alimentação -->
+                <div class="info-card text-info-card alimentacao-card">
+                    <div class="card-header">Alimentação</div>
+                    <div class="card-body">
+                        <p>A alimentação é composta de ortópteros, besouros e aranhas, além de poderem comer algumas lagartas</p>
+                        <a href="https://multimedia20stg.blob.core.windows.net/publicaciones/dulleman1978.pdf" class="ref-link">(Com & Duellman, 1978)</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>Copyright: guilherme.ceabta@gmail.com</footer>
+
+    <!-- Controle de interação do menu lateral -->
+    <script src="./geral.js"></script>
+</body>
+</html>

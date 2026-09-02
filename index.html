@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="./index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SapoPédia</title>
+</head>
+<body>
+    <!-- Botão de alternância (Hamburger) que controlará o menu no celular -->
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Alternar barra lateral" aria-expanded="false">☰</button>
+
+    <!-- Barra lateral que se transformará em menu flutuante/tela cheia no celular -->
+    <aside id="sidebar" class="sidebar semi-collapsed">
+        <nav class="sidebar-nav">
+            <h2>SapoPédia</h2>
+            <a href="sapos.html">Sapos</a>
+            <a href="ras.html">Rãs</a>
+            <a href="pererecas.html">Pererecas</a>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+        <section class="text-box">
+            <h1>Bem-vindo ao SapoPédia</h1>
+            <p style="font-weight: bold;">Este é SapoPédia!</p>
+            <p>Um local para aqueles que querem encontrar e conhecer vários tipos da nossa ordem favorita, a ordem Anura!</p>
+            <p>Este site estou criando por conta do meu apego e apreço por esses seres lindos, espero que consiga levar mais pessoas a apreciarem eles.</p>
+            <br>
+            <p style="font-weight: bold;"> Sempre em atualização para quando eu encontrar algo novo!</p>
+        </section> 
+
+        <section class="slideshow-box" aria-label="Slideshow de animais">
+            <img id="slideshow-image" src="./images/Perereca.jpg" alt="Perereca" />
+        </section>
+    </main>
+
+    <footer>Copyright: guilherme.ceabta@gmail.com</footer>
+
+    <!-- Seu arquivo JavaScript que controlará o clique para abrir/fechar -->
+    <script src="./index.js"></script>
+</body>
+</html>

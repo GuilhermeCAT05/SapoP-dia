@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="./geral.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SapoPédia - Lithobates palmipes</title>
+</head>
+<body>
+    <!-- Botão de alternância (Hamburger) que controlará o menu no celular -->
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Alternar barra lateral" aria-expanded="false">☰</button>
+
+    <!-- Barra lateral -->
+    <aside id="sidebar" class="sidebar semi-collapsed">
+        <nav class="sidebar-nav">
+            <h2>SapoPédia</h2>
+            <a href="index.html">Início</a>
+            <a href="sapos.html">Sapos</a>
+            <a href="ras.html">Rãs</a>
+            <a href="pererecas.html">Pererecas</a>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+        <div class="lithobates-container">
+            
+            <!-- Coluna Esquerda: Fotos, Identificação e Status -->
+            <div class="left-col">
+                <!-- Imagem Principal -->
+                <div class="image-box">
+                    <img src="./images/ceratophrys_aurita.jpg" alt="Ceratophrys aurita" />
+                </div>
+                
+                <!-- Nome Popular e Espécie -->
+                <div class="name-card">
+                    <p>Nome popular sugerido: <strong>Sapo-untanha-brasileiro, Sapo-boi, Untanha ou Sapo-de-chifre</strong></p>
+                    <p>Sapo da espécie <em>Ceratophrys aurita</em></p>
+                </div>
+                
+                <!-- Estado de Conservação -->
+                <div class="info-card">
+                    <div class="card-header">Estado de conservação</div>
+                    <div class="card-body status-body">
+                        <div class="status-body">
+                            <!-- Grid de labels alinhado com as 7 colunas das esferas -->
+                            <div class="status-labels">
+                                <div class="label-group extinto">Extinto</div>
+                                <div class="label-group ameacado">Ameaçado</div>
+                                <div class="label-group preocupante">Pouco preocupante</div>
+                            </div>
+
+                            <div class="status-line-container">
+                                <div class="status-line"></div>
+                                <div class="status-dots">
+                                <span class="dot">EX</span>
+                                <span class="dot">EW</span>
+                                <span class="dot">CR</span>
+                                <span class="dot">EN</span>
+                                <span class="dot">VU</span>
+                                <span class="dot">NT</span>
+                                <span class="dot active">LC</span>
+                                </div>
+                            </div>
+                            </div>
+                        <a href="https://www.iucnredlist.org/species/56335/172216557" target="_blank" class="source-link">(The IUCN Red List of Threatened Species, 2020)</a>
+                    </div>
+                </div>
+                
+                <!-- Mapa de Localização -->
+                <div class="info-card">
+                    <div class="card-header">Localização da espécie</div>
+                    <div class="card-body map-body">
+                        <img src="./images/MAPA-ceratophrys_aurita.jpg" alt="Mapa de distribuição geográfica da Ceratophrys aurita" class="map-img" />
+                        <a href="https://www.iucnredlist.org" target="_blank" class="source-link">(The IUCN Red List of Threatened Species, 2022)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Informações Detalhadas -->
+            <div class="right-col">
+                <!-- Distribuição Geográfica -->
+                <div class="info-card text-info-card">
+                    <div class="card-header">Localidade-tipo e distribuição geográfica</div>
+                    <div class="card-body">
+                        <p>Esse espécie é endêmica do Brasil, com seus habitats naturais sendo florestas subtropicais ou tropicais úmidas de baixa altitude, pântanos de água doce, charcos permanentes e lagoas, porém sua ocorrência é rara, sendo endêmica da Mata Atlântica.</p>
+                        <a href="https://www.researchgate.net/publication/359772620_Redescription_of_the_external_and_internal_oral_cavity_morphology_of_the_tadpole_of_Ceratophrys_aurita_Raddi_1823_Anura_Ceratophryidae_from_the_Caatinga_domain_Bahia_northeast_Brazil#pf2" class="ref-link">(DE MIRA-MENDES et al., 2022)</a><a href="https://pt.wikipedia.org/wiki/Ceratophrys_aurita" class="ref-link">(Contribuidores dos projetos da Wikimedia, 2014)</a>
+                    </div>
+                </div>
+                
+                <!-- Descrição Física -->
+                <div class="info-card text-info-card">
+                    <div class="card-header">Descrição</div>
+                    <div class="card-body">
+                        <p>Esta é uma espécie de grande tamanho, atingindo cerca de 23 cm de comprimento, sendo o maior de todos os sapos-untanha e o maior membro da família Ceratophryidae. É caracterizada por suas pálpebras em forma de pequenos chifres e pelo tímpano visível; a cabeça e parte do dorso são fortemente ossificadas. Possui uma enorme boca rodeada de placas semelhantes a dentículos, corpo grande e robusto e patas traseira curtas. Seu colorido chamativo é variável, com o dorso verde ou marrom-amarelado com manchas escuras, marrons ou pretas. Não possui glândulas produtoras de veneno, valendo-se de sua agressividade para afastar predadores.</p>
+                        <a href="https://pt.wikipedia.org/wiki/Ceratophrys_aurita" class="ref-link">(Contribuidores dos projetos da Wikimedia, 2014)</a>
+                    </div>
+                </div>
+                
+                <!-- Alimentação -->
+                <div class="info-card text-info-card alimentacao-card">
+                    <div class="card-header">Alimentação</div>
+                    <div class="card-body">
+                        <p>Eles são carnívoros e alimentam-se de outros girinos e peixes pequenos. Quando adultos se alimentam de uma variedade de seres, desde invertebrados á outros anuros, aves, cobras, lagartos e até roedores, possuindo também hábitos de canibalismo.</p>
+                        <a href="https://pt.wikipedia.org/wiki/Ceratophrys_aurita" class="ref-link">(Contribuidores dos projetos da Wikimedia, 2014)</a><a href="https://a-z-animals.com/animals/horned-frog/" class="ref-link">(“Horned Frog Animal Facts | Ceratophrys Ornata,” n.d.)</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>Copyright: guilherme.ceabta@gmail.com</footer>
+
+    <!-- Controle de interação do menu lateral -->
+    <script src="./geral.js"></script>
+</body>
+</html>

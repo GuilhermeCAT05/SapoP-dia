@@ -1,0 +1,491 @@
+:root {
+    color-scheme: light dark;
+    font-family: Arial, Helvetica, sans-serif;
+    --green-950: #0b2e10;
+    --green-700: #2f855a;
+    --green-600: #1f6b3a;
+    --green-100: #d8f7d0;
+    --green-200: #b8f0b0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--green-100) 0%, var(--green-200) 100%);
+    color: #111827;
+    display: flex;
+    overflow-x: hidden;
+    position: relative;
+    flex-direction: column;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 0;
+    pointer-events: none;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.image-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.72);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.image-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.image-modal-dialog {
+    position: relative;
+    width: min(92vw, 900px);
+    height: min(78vh, 720px);
+    background: white;
+    border-radius: 1.25rem;
+    padding: 0.9rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.2s ease;
+}
+
+.image-modal-overlay.active .image-modal-dialog {
+    transform: translateY(0) scale(1);
+}
+
+.image-modal-content {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 0.9rem;
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    border: none;
+    border-radius: 999px;
+    background: rgba(17, 24, 39, 0.8);
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   BARRA LATERAL (SIDEBAR) & TOGGLE
+   ========================================================================== */
+.sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--green-950) 0%, #07230a 100%);
+    color: white;
+    padding: 4rem 1.25rem 1.25rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease, width 0.3s ease;
+    z-index: 5;
+    border-right: 4px solid #064e16;
+}
+
+.sidebar.semi-collapsed {
+    width: 70px;
+    padding: 4rem 0.5rem 1rem;
+    overflow: hidden;
+}
+
+.sidebar.semi-collapsed .sidebar-nav {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.expanded {
+    width: 260px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-nav h2 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    color: #c8f8c6;
+    text-decoration: underline;
+}
+
+.sidebar-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    background: #062b08;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 0.7rem;
+    z-index: 10;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--green-700);
+    color: white;
+    padding: 0.7rem 0.9rem;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 3px 8px rgba(4, 48, 4, 0.25);
+    transition: background-color 0.2s ease, left 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background: var(--green-600);
+}
+
+/* ==========================================================================
+   CONTEÚDO E GRID LAYOUT (EVITA ROLAGEM DESNECESSÁRIA)
+   ========================================================================== */
+.content {
+    margin-left: 84px;
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente se sobrar espaço, evitando rolagem */
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    transition: margin-left 0.3s ease;
+}
+
+.content.expanded {
+    margin-left: 280px;
+}
+
+/* Container de Duas Colunas - Largura da Esquerda Ajustada */
+.lithobates-container {
+    display: grid;
+    grid-template-columns: 365px 1fr; /* Aumentado de 360px para 390px */
+    gap: 10rem;
+    align-items: center; /* Alinha os blocos lado a lado harmoniosamente */
+    width: 100%;
+    max-width: 1300px;
+}
+
+.left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Compactado levemente para caber tudo sem rolar a tela */
+}
+
+.right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    /* Removidos paddings gigantescos anteriores para evitar quebra do layout */
+    padding: 0; 
+}
+
+/* ==========================================================================
+   CARDS E COMPONENTES ESPECÍFICOS
+   ========================================================================== */
+
+/* Moldura de Imagem do Sapo */
+.image-box {
+    background: white;
+    border: 3px solid var(--green-600);
+    border-radius: 1rem;
+    padding: 0.7rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.7rem;
+    display: block;
+    object-fit: cover;
+}
+
+/* Card de Nome Popular */
+.name-card {
+    background: white;
+    border: 1.5px solid #111827;
+    border-radius: 1rem;
+    padding: 0.8rem 1.1rem; /* Levemente mais compacto */
+    text-align: center;
+    font-size: 0.9rem;
+    color: #111827;
+    line-height: 1.5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Painel de Informação Geral */
+.info-card {
+    background: white;
+    border: 2px solid var(--green-600);
+    border-radius: 0.9rem;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    background-color: var(--green-600);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.card-body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilização dos Textos */
+.text-info-card .card-body p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #111827;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.ref-link {
+    align-self: flex-end;
+    color: #b0507d; /* Rosa/Magenta dos links de referência */
+    text-decoration: underline;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Ajuste específico para o Card de Alimentação */
+.alimentacao-card {
+    max-width: 420px;
+    width: 100%;
+    align-self: center;
+}
+
+/* Componente do Mapa */
+.map-body {
+    padding: 0.6rem;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.map-img {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    display: block;
+}
+
+.source-link {
+    font-size: 0.75rem;
+    color: #2563eb;
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* ==========================================================================
+   GRÁFICO DE ESTADO DE CONSERVAÇÃO (PERFEITO E PRÓXIMO)
+   ========================================================================== */
+.status-body {
+    padding: 0.8rem; /* Ajustado para poupar espaço vertical */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem; /* Extremamente próximo */
+}
+
+/* Dividimos a área de textos em 7 colunas iguais correspondendo a cada esfera */
+.status-labels {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    font-size: 0.72rem;
+    color: #4b5563;
+    font-weight: 600;
+    margin-bottom: -0.15rem; /* Puxa o texto para colar na bolinha */
+}
+
+/* "Extinto" cobre as duas primeiras colunas (EX e EW) */
+.status-labels .extinto {
+    grid-column: 1 / span 2;
+    text-align: center;
+}
+
+/* "Ameaçado" cobre as três colunas centrais (CR, EN e VU) */
+.status-labels .ameacado {
+    grid-column: 3 / span 3;
+    text-align: center;
+}
+
+/* "Pouco preocupante" cobre as duas últimas colunas (NT e LC) */
+.status-labels .preocupante {
+    grid-column: 6 / span 2;
+    text-align: center;
+}
+
+.status-line-container {
+    width: 100%;
+    position: relative;
+    margin: 0.4rem 0;
+    display: flex;
+    align-items: center;
+}
+
+/* A linha cinza de fundo fica centralizada horizontalmente */
+.status-line {
+    position: absolute;
+    height: 2px;
+    background-color: #9ca3af;
+    left: calc(100% / 14);
+    right: calc(100% / 14);
+    z-index: 1;
+}
+
+/* Dividimos o container das bolinhas exatamente no mesmo Grid de 7 colunas */
+.status-dots {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    justify-items: center;
+}
+
+.status-dots .dot {
+    background: white;
+    border: 1.5px solid #4b5563;
+    color: #1f2937;
+    border-radius: 50%;
+    width: 32px;  
+    height: 32px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem; 
+    font-weight: bold;
+}
+
+.status-dots .dot.active {
+    border: 2px solid #16a34a;
+    background-color: #dcfce7;
+    color: #15803d;
+    box-shadow: 0 0 0 2px #16a34a;
+}
+
+/* ==========================================================================
+   FOOTER (FIXADO CORRETAMENTE NO CANTO INFERIOR DIREITO)
+   ========================================================================== */
+footer {
+    position: fixed;
+    bottom: 1rem;
+    right: 1.5rem; /* Corrigido para alinhar perfeitamente à direita */
+    left: auto;    /* Reseta qualquer herança indesejada */
+    font-size: 0.9rem;
+    color: #4b5563;
+    z-index: 10;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 900px) {
+    .content {
+        margin-left: 70px;
+        padding: 1.5rem 1rem 4rem;
+    }
+
+    .lithobates-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 600px;
+    }
+
+    .alimentacao-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        width: 260px;
+        padding-top: 4rem;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar.semi-collapsed {
+        width: 260px;
+        padding: 4rem 1.25rem 1.25rem;
+    }
+
+    .sidebar.semi-collapsed .sidebar-nav {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar-toggle {
+        left: auto;
+        right: 1rem;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 4rem 1rem 4rem;
+    }
+
+    footer {
+        position: static;
+        text-align: center;
+        padding: 0 1rem 1rem;
+    }
+}

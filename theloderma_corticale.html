@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="./geral.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SapoPédia - Theloderma corticale</title>
+</head>
+<body>
+    <!-- Botão de alternância (Hamburger) que controlará o menu no celular -->
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Alternar barra lateral" aria-expanded="false">☰</button>
+
+    <!-- Barra lateral -->
+    <aside id="sidebar" class="sidebar semi-collapsed">
+        <nav class="sidebar-nav">
+            <h2>SapoPédia</h2>
+            <a href="index.html">Início</a>
+            <a href="ras.html">Rãs</a>
+            <a href="sapos.html">Sapos</a>
+            <a href="pererecas.html">Pererecas</a>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+        <div class="lithobates-container">
+            
+            <!-- Coluna Esquerda: Fotos, Identificação e Status -->
+            <div class="left-col">
+                <!-- Imagem Principal -->
+                <div class="image-box">
+                    <img src="./images/theloderma_corticale.jpg" alt="Theloderma corticale" />
+                </div>
+                
+                <!-- Nome Popular e Espécie -->
+                <div class="name-card">
+                    <p>Nome popular sugerido: <strong>Rã-musgo-vietnamita e Rã-de-Tonkin-de-olhos-esbugalhados</strong></p>
+                    <p>Rã da espécie <em>Theloderma corticale</em></p>
+                </div>
+                
+                <!-- Estado de Conservação -->
+                <div class="info-card">
+                    <div class="card-header">Estado de conservação</div>
+                    <div class="card-body status-body">
+                        <div class="status-body">
+                            <!-- Grid de labels alinhado com as 7 colunas das esferas -->
+                            <div class="status-labels">
+                                <div class="label-group extinto">Extinto</div>
+                                <div class="label-group ameacado">Ameaçado</div>
+                                <div class="label-group preocupante">Pouco preocupante</div>
+                            </div>
+
+                            <div class="status-line-container">
+                                <div class="status-line"></div>
+                                <div class="status-dots">
+                                <span class="dot">EX</span>
+                                <span class="dot">EW</span>
+                                <span class="dot">CR</span>
+                                <span class="dot">EN</span>
+                                <span class="dot">VU</span>
+                                <span class="dot">NT</span>
+                                <span class="dot active">LC</span>
+                                </div>
+                            </div>
+                            </div>
+                        <a href="https://www.iucnredlist.org/species/219709082/219667057" target="_blank" class="source-link">(The IUCN Red List of Threatened Species, 2022)</a>
+                    </div>
+                </div>
+                
+                <!-- Mapa de Localização -->
+                <div class="info-card">
+                    <div class="card-header">Localização da espécie</div>
+                    <div class="card-body map-body">
+                        <img src="./images/MAPA-theloderma_corticale.jpg" alt="Mapa de distribuição geográfica da Theloderma corticale" class="map-img" />
+                        <a href="https://www.iucnredlist.org" target="_blank" class="source-link">(“Vietnamese mossy frog,” 2016)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Informações Detalhadas -->
+            <div class="right-col">
+                <!-- Distribuição Geográfica -->
+                <div class="info-card text-info-card">
+                    <div class="card-header">Localidade-tipo e distribuição geográfica</div>
+                    <div class="card-body">
+                        <p>Como o próprio nome sugere, o sapo musgo vietnamita vive no Vietnã; especificamente no norte do Vietnã, uma região definida por falésias de calcário e florestas tropicais perenes.
+                        Rãs musgosas vietnamitas são encontradas em cavernas inundadas e nas margens de riachos de montanha rochosos a elevações de 2.300 a 3.280 pés (700 a 1.000 metros). Esta espécie semi-aquática passa grande parte do tempo escondida na água sob rochas e plantas flutuantes. Eles também se ligarão a fendas de rocha, parecendo ser musgo.</p>
+                        <a href="https://nationalzoo.si.edu/animals/vietnamese-mossy-frog" class="ref-link">(“Vietnamese mossy frog,” 2016)</a>                        
+                    </div>
+                </div>
+                
+                <!-- Descrição Física -->
+                <div class="info-card text-info-card">
+                    <div class="card-header">Descrição</div>
+                    <div class="card-body">
+                        <p>Elas se assemelham muito a um aglomerado de musgo graças à sua cor verde, manchas pretas e tubérculos e espinhas visíveis, se escondendo em bacias de água encontradas em fendas com apenas os olhos se projetando para manter um olho atento em seus arredores. Como resultado, são quase impossíveis de detectar quando estão parados. Os machos têm um calo de reprodução pronunciado na base do dedo interno.</p>
+                        <a href="https://nationalzoo.si.edu/animals/vietnamese-mossy-frog" class="ref-link">(“Vietnamese mossy frog,” 2016)</a>
+                    </div>
+                </div>
+                
+                <!-- Alimentação -->
+                <div class="info-card text-info-card alimentacao-card">
+                    <div class="card-header">Alimentação</div>
+                    <div class="card-body">
+                        <p>Elas caçam e comem grandes insetos, como grilos e baratas</p>
+                        <a href="https://nationalzoo.si.edu/animals/vietnamese-mossy-frog" class="ref-link">(“Vietnamese mossy frog,” 2016)</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>Copyright: guilherme.ceabta@gmail.com</footer>
+
+    <!-- Controle de interação do menu lateral -->
+    <script src="./geral.js"></script>
+</body>
+</html>

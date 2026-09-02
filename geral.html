@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="./geral.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SapoPédia - Aplastodiscus perviridis</title>
+</head>
+<body>
+    <!-- Botão de alternância (Hamburger) que controlará o menu no celular -->
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Alternar barra lateral" aria-expanded="false">☰</button>
+
+    <!-- Barra lateral -->
+    <aside id="sidebar" class="sidebar semi-collapsed">
+        <nav class="sidebar-nav">
+            <h2>SapoPédia</h2>
+            <a href="index.html">Início</a>
+            <a href="sapos.html">Sapos</a>
+            <a href="ras.html">Rãs</a>
+            <a href="perecas.html">Pererecas</a>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+        <div class="lithobates-container">
+            
+            <!-- Coluna Esquerda: Fotos, Identificação e Status -->
+            <div class="left-col">
+                <!-- Imagem Principal -->
+                <div class="image-box">
+                    <img src="./images/aplastodiscus_perviridis.jpg" alt="Aplastodiscus Perviridis" />
+                </div>
+                
+                <!-- Nome Popular e Espécie -->
+                <div class="name-card">
+                    <p>Nome popular sugerido: <strong>Perereca-verde e <i>Canebrake Treefrog</i></strong></p>
+                    <p>Sapo da espécie <em>Aplastodiscus perviridis</em></p>
+                </div>
+                
+                <!-- Estado de Conservação -->
+                <div class="info-card">
+                    <div class="card-header">Estado de conservação</div>
+                    <div class="card-body status-body">
+                        <div class="status-body">
+                            <!-- Grid de labels alinhado com as 7 colunas das esferas -->
+                            <div class="status-labels">
+                                <div class="label-group extinto">Extinto</div>
+                                <div class="label-group ameacado">Ameaçado</div>
+                                <div class="label-group preocupante">Pouco preocupante</div>
+                            </div>
+
+                            <div class="status-line-container">
+                                <div class="status-line"></div>
+                                <div class="status-dots">
+                                <span class="dot">EX</span>
+                                <span class="dot">EW</span>
+                                <span class="dot">CR</span>
+                                <span class="dot">EN</span>
+                                <span class="dot">VU</span>
+                                <span class="dot">NT</span>
+                                <span class="dot active">LC</span>
+                                </div>
+                            </div>
+                            </div>
+                        <a href="https://www.iucnredlist.org/species/112716121/101424624" target="_blank" class="source-link">(The IUCN Red List of Threatened Species, 2023)</a>
+                    </div>
+                </div>
+                
+                <!-- Mapa de Localização -->
+                <div class="info-card">
+                    <div class="card-header">Localização da espécie</div>
+                    <div class="card-body map-body">
+                        <img src="./images/MAPA-aplastodiscus_perviridis.jpg" alt="Mapa de distribuição geográfica da Aplastodiscus perviridis" class="map-img" />
+                        <a href="https://www.iucnredlist.org" target="_blank" class="source-link">(The IUCN Red List of Threatened Species, 2021)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Informações Detalhadas -->
+            <div class="right-col">
+                <!-- Distribuição Geográfica -->
+                <div class="info-card text-info-card">
+                    <div class="card-header">Localidade-tipo e distribuição geográfica</div>
+                    <div class="card-body">
+                        <p>É uma espécie comum, com registros na região central do Brasil, sudeste e sul, até o nordeste da Argentina e, possivelmente, no Paraguai.</p>
+                        <a href="https://www.anfibiosdasaraucarias.com.br/assets/especies/01_perereca-verde/bio.html" class="ref-link">(“Perereca-verde | Espécies da Floresta com Araucárias,” 2026)</a><a href="https://pt.wikipedia.org/wiki/Aplastodiscus_perviridis" class="ref-link">(“Aplastodiscus perviridis,” 2022)</a>
+                    </div>
+                </div>
+                
+                <!-- Descrição Física -->
+                <div class="info-card text-info-card">
+                    <div class="card-header">Descrição</div>
+                    <div class="card-body">
+                        <p>Os representantes desta espécie são geralmente verdes, podendo variar entre o verde escuro, claro ou amarelado. Possuem várias pequenos pontos pretos ao longo do dorso. Podem ser encontrados na natureza de agosto a abril.
+                        Podem realizar tanatose e geralmente vocalizam sobre gramíneas e arbustos em áreas abertas. Fazem seus ninhos escavados no chão às margens de riachos ou pequenos córregos. O macho guia a fêmea até o ninho subterrâneo, onde ela libera sua desova num fundo lamacento. Os ovos, embriões e girinos são aquáticos. </p>
+                        <a href="https://www.anfibiosdasaraucarias.com.br/assets/especies/01_perereca-verde/bio.html" class="ref-link">(“Perereca-verde | Espécies da Floresta com Araucárias,” 2026)</a>
+                    </div>
+                </div>
+                
+                <!-- Alimentação -->
+                <div class="info-card text-info-card alimentacao-card">
+                    <div class="card-header">Alimentação</div>
+                    <div class="card-body">
+                        <p>Essas pererecas se alimentam de ácaros, aranhas, besouros e lagartas de borboletas e mariposas.</p>
+                        <a href="https://www.anfibiosdasaraucarias.com.br/assets/especies/01_perereca-verde/bio.html" class="ref-link">(“Perereca-verde | Espécies da Floresta com Araucárias,” 2026)</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>Copyright: guilherme.ceabta@gmail.com</footer>
+
+    <!-- Controle de interação do menu lateral -->
+    <script src="./geral.js"></script>
+</body>
+</html>

@@ -228,28 +228,13 @@ footer {
     @media (max-width: 768px) {
 
     body {
-        display: block;
+        flex-direction: column;
         overflow-x: hidden;
         overflow-y: auto;
     }
 
     /* =========================
-       BOTÃO DO MENU
-       ========================= */
-    .sidebar-toggle {
-        position: fixed !important;
-        top: 0.75rem !important;
-        right: 0.75rem !important;
-        left: auto !important;
-
-        z-index: 1100 !important;
-
-        padding: 0.7rem 0.9rem;
-    }
-
-
-    /* =========================
-       SIDEBAR / MENU
+       SIDEBAR
        ========================= */
     .sidebar {
         position: fixed;
@@ -257,143 +242,116 @@ footer {
         top: 0;
         left: 0;
 
-        width: 100% !important;
-        height: 4.5rem !important;
+        width: 260px;
+        min-width: 260px;
 
-        min-height: 0 !important;
-        min-width: 0 !important;
+        height: 100vh;
+        min-height: 100vh;
 
-        padding: 0 !important;
+        padding: 4rem 1.25rem 1.25rem;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        transform: translateX(-100%);
 
-        background: #0b2e10;
-
-        border: none !important;
-        border-bottom: 4px solid #064e16 !important;
-
-        overflow: hidden;
+        transition: transform 0.3s ease;
 
         z-index: 1000;
 
-        transition: height 0.35s ease-in-out;
-    }
+        border-right: 4px solid #064e16;
+        border-bottom: none;
 
-
-    /* Remove o comportamento desktop */
-    .sidebar.semi-collapsed {
-        width: 100% !important;
-        height: 4.5rem !important;
-
-        padding: 0 !important;
-
-        overflow: hidden !important;
-
-        left: 0 !important;
-        top: 0 !important;
-    }
-
-
-    /* =========================
-       MENU ABERTO
-       ========================= */
-    .sidebar.active {
-        width: 100% !important;
-        height: auto !important;
-
-        min-height: 4.5rem !important;
-        max-height: 80vh !important;
-
-        padding: 5rem 1.5rem 2rem !important;
-
-        overflow-y: auto !important;
+        overflow-y: auto;
         overflow-x: hidden;
-
-        align-items: flex-start;
     }
 
+    /* Sidebar aberta */
+    .sidebar.active {
+        transform: translateX(0);
+    }
 
     /* =========================
-       LINKS
+       SEMI-COLLAPSED
+       ========================= */
+
+    /*
+       No celular, ignoramos o estado
+       semi-collapsed do desktop.
+    */
+    .sidebar.semi-collapsed {
+        width: 260px;
+        min-width: 260px;
+
+        padding: 4rem 1.25rem 1.25rem;
+
+        transform: translateX(-100%);
+    }
+
+    .sidebar.semi-collapsed .sidebar-nav {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* =========================
+       BOTÃO
+       ========================= */
+    .sidebar-toggle {
+        position: fixed;
+
+        top: 1rem;
+        left: auto;
+        right: 1rem;
+
+        z-index: 1100;
+    }
+
+    /* =========================
+       NAVEGAÇÃO
        ========================= */
     .sidebar-nav {
-        display: none !important;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .sidebar.active .sidebar-nav {
-        display: flex !important;
-
-        flex-direction: column;
-        align-items: stretch;
-
-        width: 100%;
-
-        gap: 0.75rem;
+        display: flex;
 
         opacity: 1;
         pointer-events: auto;
     }
 
-
     .sidebar-nav h2 {
-        font-size: 1.5rem !important;
-        margin-bottom: 0.75rem !important;
-        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
-
 
     .sidebar-nav a {
-        display: block !important;
-
-        width: 100% !important;
-
-        padding: 0.8rem 1rem !important;
-
-        font-size: 1.1rem !important;
-
-        text-align: center;
-
-        border-radius: 0.5rem;
+        font-size: 1rem;
+        padding: 0.8rem;
     }
 
-
     /* =========================
-       CONTEÚDO PRINCIPAL
+       CONTEÚDO
        ========================= */
     .content {
-        width: 100% !important;
+        width: 100%;
 
         margin-left: 0 !important;
 
-        padding: 6rem 1rem 2rem !important;
+        padding: 4rem 1rem 4rem;
 
         display: flex;
-
         flex-direction: column;
 
         align-items: center;
 
-        justify-content: flex-start;
-
         gap: 1.5rem;
     }
-
 
     /* =========================
        CAIXA DE TEXTO
        ========================= */
     .text-box {
-        width: 100% !important;
+        width: 100%;
         max-width: 600px;
 
-        min-height: auto !important;
-        max-height: none !important;
+        min-height: auto;
+        max-height: none;
 
-        padding: 1.5rem !important;
+        padding: 1.5rem;
     }
 
     .text-box p {
@@ -401,32 +359,30 @@ footer {
         line-height: 1.6;
     }
 
-
     /* =========================
        SLIDESHOW
        ========================= */
     .slideshow-box {
-        width: 100% !important;
+        width: 100%;
+        max-width: 340px;
 
-        max-width: 340px !important;
-
-        min-height: 0 !important;
+        min-height: 0;
+        height: auto;
 
         aspect-ratio: 1 / 1;
 
-        margin: 0 auto !important;
+        margin: 0 auto;
     }
-
 
     /* =========================
        FOOTER
        ========================= */
     footer {
-        position: static !important;
+        position: static;
 
-        width: 100% !important;
+        width: 100%;
 
-        padding: 1.5rem 1rem 1rem !important;
+        padding: 0 1rem 1rem;
 
         text-align: center;
     }
